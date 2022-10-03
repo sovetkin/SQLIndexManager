@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.32901.82
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SQLIndexManager", "SQLIndexManager.csproj", "{FFD422BC-70A3-405B-AC84-E875C09A1C37}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SQLIndexManager_WPF", "SQLIndexManager_WPF\SQLIndexManager_WPF.csproj", "{C1A30764-A92D-4460-A23F-5B003C7E8B57}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,8 +17,15 @@ Global
 		{FFD422BC-70A3-405B-AC84-E875C09A1C37}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FFD422BC-70A3-405B-AC84-E875C09A1C37}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FFD422BC-70A3-405B-AC84-E875C09A1C37}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C1A30764-A92D-4460-A23F-5B003C7E8B57}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C1A30764-A92D-4460-A23F-5B003C7E8B57}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C1A30764-A92D-4460-A23F-5B003C7E8B57}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C1A30764-A92D-4460-A23F-5B003C7E8B57}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {40EB347B-75CD-4CF2-8691-600C57D94DD7}
 	EndGlobalSection
 EndGlobal
