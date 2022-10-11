@@ -1,6 +1,9 @@
-﻿using DevExpress.Mvvm;
+﻿using System;
+using System.Threading;
 
-namespace SQLIndexManager_WPF
+using DevExpress.Mvvm;
+
+namespace SQLIndexManager_WPF.ViewModels
 {
     public class MainViewModel : ViewModelBase
     {

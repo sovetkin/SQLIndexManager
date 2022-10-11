@@ -5,11 +5,12 @@ namespace SQLIndexManager_WPF.Views
     /// <summary>
     /// Interaction logic for SplashScreen.xaml
     /// </summary>
-    public partial class SplashScreen : SplashScreenWindow
+    public partial class StartScreenView : SplashScreenWindow
     {
-        public SplashScreen()
+        public StartScreenView()
         {
             InitializeComponent();
         }
+
     }
 }

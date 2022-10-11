@@ -4,9 +4,15 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core"
-        xmlns:local="clr-namespace:SQLIndexManager_WPF" d:DataContext="{d:DesignInstance Type=local:MainViewModel}"
+        xmlns:model="clr-namespace:SQLIndexManager_WPF.ViewModels"
+        xmlns:view="clr-namespace:SQLIndexManager_WPF.Views"
+        xmlns:mvvm="http://schemas.devexpress.com/winfx/2008/xaml/mvvm"
+        d:DataContext="{d:DesignInstance Type=model:MainViewModel}"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
+    <dx:ThemedWindow.DataContext>
+        <model:MainViewModel/>
+    </dx:ThemedWindow.DataContext>
     <Grid>
 
     </Grid>

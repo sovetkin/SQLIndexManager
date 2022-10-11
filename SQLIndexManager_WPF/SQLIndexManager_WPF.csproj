@@ -4,16 +4,25 @@
     <OutputType>WinExe</OutputType>
     <TargetFramework>net5.0-windows</TargetFramework>
     <UseWPF>true</UseWPF>
+    <NeutralLanguage>en-US</NeutralLanguage>
+    <Company />
+    <Authors>Sergii Syrovatchenko</Authors>
+    <Product>Free GUI Tool for Index Maintenance on SQL Server and Azure</Product>
+    <AssemblyVersion>1.0.0.71</AssemblyVersion>
+    <Copyright>Sergii Syrovatchenko</Copyright>
+	<PackageId>SQL Index Manager</PackageId>
+	<Title>SQL Index Manager</Title>
+	<StartupObject>SQLIndexManager_WPF.Program</StartupObject>
   </PropertyGroup>
 
   <ItemGroup>
     <Folder Include="Infrastructure\" />
     <Folder Include="Resources\" />
-    <Folder Include="Views\ThemedSplashScreen\" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="DevExpress.Wpf.Core" Version="21.2.3" />
+    <PackageReference Include="Microsoft.Extensions.Hosting" Version="5.0.0" />
   </ItemGroup>
 
 </Project>
