@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.32901.82
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SQLIndexManager", "SQLIndexManager_Old\SQLIndexManager.csproj", "{FFD422BC-70A3-405B-AC84-E875C09A1C37}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SQLIndexManager", "SQLIndexManager.csproj", "{FFD422BC-70A3-405B-AC84-E875C09A1C37}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SQLIndexManager_WPF", "SQLIndexManager_WPF\SQLIndexManager_WPF.csproj", "{C1A30764-A92D-4460-A23F-5B003C7E8B57}"
 EndProject

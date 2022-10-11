@@ -1,21 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Configuration;
-using System.Data;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows;
 
-using DevExpress.Mvvm;
 using DevExpress.Xpf.Core;
+using DevExpress.Xpf.Core.Native;
 
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 
 using SQLIndexManager_WPF.ViewModels;
-using SQLIndexManager_WPF.Views;
-
-using views = SQLIndexManager_WPF.Views;
 
 namespace SQLIndexManager_WPF
 {
@@ -27,14 +19,13 @@ namespace SQLIndexManager_WPF
         private static IHost _host;
 
         public static IHost Host => _host ??= Program.CreateHostBuilder(Environment.GetCommandLineArgs()).Build();
-        protected ISplashScreenManagerService SplashScreenManager => CreateSplashScreenManager();
 
         public App()
         {
-            /*var splashScreenViewModel = new StartScreenViewModel();
-            SplashScreenManager manager = DevExpress.Xpf.Core.SplashScreenManager.CreateThemed(splashScreenViewModel);
-            manager.ShowOnStartup(false);*/
-            SplashScreenManager.Show();
+            SplashScreenManager.Create(() =>
+                new FluentSplashScreen(),
+                new StartScreenViewModel())
+                               .ShowOnStartup();
         }
 
         protected override async void OnStartup(StartupEventArgs e)
@@ -57,16 +48,6 @@ namespace SQLIndexManager_WPF
         public static void ConfigureServices(HostBuilderContext host, IServiceCollection services)
         {
             services.AddSingleton<StartScreenViewModel>();
-        }
-
-        private static ISplashScreenManagerService CreateSplashScreenManager()
-        {
-            return new SplashScreenManagerService()
-            {
-                PredefinedSplashScreenType = PredefinedSplashScreenType.Themed,
-                SplashScreenType = typeof(StartScreenView),
-                StartupLocation = WindowStartupLocation.CenterScreen
-            };
         }
     }
 }

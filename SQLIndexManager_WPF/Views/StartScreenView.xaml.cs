@@ -1,5 +1,7 @@
 ﻿using DevExpress.Xpf.Core;
 
+using SQLIndexManager_WPF.ViewModels;
+
 namespace SQLIndexManager_WPF.Views
 {
     /// <summary>

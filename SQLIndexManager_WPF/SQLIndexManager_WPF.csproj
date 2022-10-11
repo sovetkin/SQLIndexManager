@@ -7,22 +7,45 @@
     <NeutralLanguage>en-US</NeutralLanguage>
     <Company />
     <Authors>Sergii Syrovatchenko</Authors>
-    <Product>Free GUI Tool for Index Maintenance on SQL Server and Azure</Product>
+    <Product></Product>
     <AssemblyVersion>1.0.0.71</AssemblyVersion>
-    <Copyright>Sergii Syrovatchenko</Copyright>
-	<PackageId>SQL Index Manager</PackageId>
-	<Title>SQL Index Manager</Title>
+	<AssemblyTitle>SQL Index Manager</AssemblyTitle>
 	<StartupObject>SQLIndexManager_WPF.Program</StartupObject>
+	<GeneratedAssemblyInfoFile>assemblyinfo.cs</GeneratedAssemblyInfoFile>
+	<Description>Free GUI Tool for Index Maintenance on SQL Server and Azure</Description>
+	<Copyright>Sergii Syrovatchenko</Copyright>
   </PropertyGroup>
+
+  <!--<ItemGroup>
+    <None Remove="Resources\Images\icon.png" />
+  </ItemGroup>-->
+
+  <ItemGroup>
+    <Resource Include="Resources\Images\icon.png" />
+  </ItemGroup>
 
   <ItemGroup>
     <Folder Include="Infrastructure\" />
-    <Folder Include="Resources\" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="DevExpress.Wpf.Core" Version="21.2.3" />
     <PackageReference Include="Microsoft.Extensions.Hosting" Version="5.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Properties\Resources.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
   </ItemGroup>
 
 </Project>
