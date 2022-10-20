@@ -16,20 +16,20 @@
 	<Copyright>Sergii Syrovatchenko</Copyright>
   </PropertyGroup>
 
-  <!--<ItemGroup>
-    <None Remove="Resources\Images\icon.png" />
-  </ItemGroup>-->
-
   <ItemGroup>
     <Resource Include="Resources\Images\icon.png" />
+    <Resource Include="Resources\Images\icon_about.png" />
+    <Resource Include="Resources\Images\icon_fix.png" />
+    <Resource Include="Resources\Images\icon_new_connection.png" />
+    <Resource Include="Resources\Images\icon_options.png" />
+    <Resource Include="Resources\Images\icon_refresh.png" />
+    <Resource Include="Resources\Images\icon_scan.png" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Infrastructure\" />
-  </ItemGroup>
-
-  <ItemGroup>
+    <PackageReference Include="devexpress.wpf.controls" Version="21.2.3" />
     <PackageReference Include="DevExpress.Wpf.Core" Version="21.2.3" />
+    <PackageReference Include="devexpress.wpf.ribbon" Version="21.2.3" />
     <PackageReference Include="Microsoft.Extensions.Hosting" Version="5.0.0" />
   </ItemGroup>
 

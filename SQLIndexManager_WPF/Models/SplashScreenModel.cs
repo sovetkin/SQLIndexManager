@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace SQLIndexManager_WPF.Models
 {
+    /// <summary>
+    /// Responsible for data model of the splash screen window
+    /// </summary>
     internal class SplashScreenModel
     {
         public double Progress { get; set; }

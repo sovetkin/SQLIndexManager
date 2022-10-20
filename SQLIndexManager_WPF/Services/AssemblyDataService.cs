@@ -10,9 +10,9 @@ using System.Threading.Tasks;
 namespace SQLIndexManager_WPF.Services
 {
     /// <summary>
-    /// Responsible to get information about assembly
+    /// Responsible for getting information related to assembly
     /// </summary>
-    internal class AssemblyDataService
+    public class AssemblyDataService
     {
         private Assembly _assembly;
         public AssemblyDataService()
@@ -20,13 +20,15 @@ namespace SQLIndexManager_WPF.Services
             _assembly = Assembly.GetExecutingAssembly();
         }
 
-        internal string GetTitle() => ((AssemblyTitleAttribute)_assembly.GetCustomAttributes(typeof(AssemblyTitleAttribute), false)[0]).Title;
+        internal string GetTitle() => (_assembly.GetCustomAttributes()
+            .FirstOrDefault(p => p.GetType() == typeof(AssemblyTitleAttribute)) as AssemblyTitleAttribute).Title;
         internal string GetVersion() => _assembly.GetName().Version.ToString();
-        internal string GetCopyright() =>
-            ((AssemblyCopyrightAttribute)_assembly.GetCustomAttributes(typeof(AssemblyCopyrightAttribute), false)[0]).Copyright;
-        internal string GetProduct() => ((AssemblyProductAttribute)_assembly.GetCustomAttributes(typeof(AssemblyProductAttribute), false)[0]).Product;
+        internal string GetCopyright() => (_assembly.GetCustomAttributes()
+            .FirstOrDefault(p => p.GetType() == typeof(AssemblyCopyrightAttribute)) as AssemblyCopyrightAttribute).Copyright;
+        internal string GetProduct() => (_assembly.GetCustomAttributes()
+            .FirstOrDefault(p => p.GetType() == typeof(AssemblyProductAttribute)) as AssemblyProductAttribute).Product;
         internal string GetExeName() => Process.GetCurrentProcess().ProcessName;
-        internal string GetExePath() => Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
+        internal string GetExePath() => Path.GetDirectoryName(_assembly.Location);
         internal string GetApplicationName() => $"{GetExeName()}-{Environment.ProcessId}";
         internal string GetLayoutFileName() => $"{GetExePath()}\\{GetExeName()}.layout";
         internal string GetSettingFileName() => $"{GetExePath()}\\{GetExeName()}.cfg";

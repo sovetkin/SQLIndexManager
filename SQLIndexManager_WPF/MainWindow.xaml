@@ -1,19 +1,39 @@
 ﻿<dx:ThemedWindow x:Class="SQLIndexManager_WPF.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008" mc:Ignorable="d"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core"
         xmlns:model="clr-namespace:SQLIndexManager_WPF.ViewModels"
+        xmlns:dxb="http://schemas.devexpress.com/winfx/2008/xaml/bars"
         xmlns:view="clr-namespace:SQLIndexManager_WPF.Views"
         xmlns:mvvm="http://schemas.devexpress.com/winfx/2008/xaml/mvvm"
-        d:DataContext="{d:DesignInstance Type=model:MainViewModel}"
-        mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        xmlns:dxr="http://schemas.devexpress.com/winfx/2008/xaml/ribbon"
+        xmlns:dxwui="http://schemas.devexpress.com/winfx/2008/xaml/windowsui"
+        d:DataContext="{d:DesignInstance Type={x:Type model:MainViewModel}}"
+        Title="MainWindow" Height="450" Width="800" TitleAlignment="Center" WindowKind="Ribbon" ShowIcon="False">
     <dx:ThemedWindow.DataContext>
         <model:MainViewModel/>
     </dx:ThemedWindow.DataContext>
     <Grid>
-
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+        <ContentControl Content=""/>
+        <dxwui:HamburgerMenu Grid.Row="0" AvailableViewStates="Overlay">
+            <dxwui:HamburgerMenuNavigationButton Content="Add Connection" GlyphWidth="16" GlyphHeight="16" Glyph="/Resources/Images/icon_new_connection.png" />
+            <dxwui:HamburgerMenuNavigationButton Content="Select Databases" GlyphWidth="16" GlyphHeight="16" Glyph="/Resources/Images/icon_scan.png"/>
+            <dxwui:HamburgerMenuNavigationButton Content="Refresh Indexes" GlyphWidth="16" GlyphHeight="16" Glyph="/Resources/Images/icon_refresh.png"/>
+            <dxwui:HamburgerMenuNavigationButton Content="Fix Indexes" GlyphWidth="16" GlyphHeight="16" Glyph="/Resources/Images/icon_fix.png"/>
+            <dxwui:HamburgerMenuNavigationButton Content="About" GlyphWidth="16" GlyphHeight="16" Glyph="/Resources/Images/icon_about.png"/>
+            <dxwui:HamburgerMenu.BottomBarItems>
+                <dxwui:HamburgerMenuBottomBarNavigationButton Content="Exit"/>
+                <dxwui:HamburgerMenuBottomBarNavigationButton Glyph="/Resources/Images/icon_options.png"/>
+            </dxwui:HamburgerMenu.BottomBarItems>
+        </dxwui:HamburgerMenu>
+        <dxr:RibbonStatusBarControl Grid.Row="1">
+            
+        </dxr:RibbonStatusBarControl>
     </Grid>
 </dx:ThemedWindow>

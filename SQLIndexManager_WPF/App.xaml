@@ -6,5 +6,7 @@
              StartupUri="MainWindow.xaml">
     <Application.Resources>
 
+        <DataTemplate x:Key="Template1">
+        </DataTemplate>
     </Application.Resources>
 </Application>

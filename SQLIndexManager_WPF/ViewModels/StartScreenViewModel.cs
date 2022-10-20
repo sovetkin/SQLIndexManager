@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 using DevExpress.Mvvm;
 
@@ -11,6 +7,9 @@ using SQLIndexManager_WPF.Services;
 
 namespace SQLIndexManager_WPF.ViewModels
 {
+    /// <summary>
+    /// Responsible for providing data for splash screen view.
+    /// </summary>
     internal class StartScreenViewModel : ViewModelBase
 
     {
@@ -43,6 +42,10 @@ namespace SQLIndexManager_WPF.ViewModels
         public bool IsIndeterminate => _data.IsIndeterminate;
         public object Tag => _data.Tag;
 
+        /// <summary>
+        /// Operator realizing the implicit conversion from current class to DXSplashScreenViewModel class.
+        /// </summary>
+        /// <param name="vm">The current view model class</param>
         public static implicit operator DXSplashScreenViewModel(StartScreenViewModel vm) => new DXSplashScreenViewModel()
         {
             Title = vm.Title,
